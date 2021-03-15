@@ -13,6 +13,10 @@
 	box-sizing: border-box;
 }
 
+#sidebar-toggle {
+	display: none;
+}
+
 .sidebar {
 	height: 100%;
 	width: 240px;
@@ -49,6 +53,12 @@
 .sidebar a span:last-child {
 	padding-left: 0.6rem;
 }
+
+#sidebar-toggle:checked ~ .sidebar .sidebar-header h3 span:last-child,
+#sidebar-toggle:checked ~ .sidebar li span:last-child {
+	display: none;
+}
+
 
 .main-content {
 	position: relative;
@@ -168,7 +178,9 @@ main {
 	gap: 1.5rem;
 }
 
-.activity-card {
+.activity-card,
+.summary-card,
+.bday-card {
 	background: #fff;
 	border-radius: 7px;
 }
@@ -246,4 +258,66 @@ tbody tr:nth-child(even) {
 
 .img-3 {
 	background-image: url(img/4.jpg);
+}
+
+.summary-card {
+	margin-bottom: 1.5rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+}
+
+.summary-single {
+	padding: 0.5rem 1rem;
+	display: flex;
+	align-items: center;
+}
+
+.summary-single span {
+	font-size: 1.5rem;
+	color: #777;
+	padding-right: 1rem;
+}
+
+.summary-single h5 {
+	color: var(--main-color);
+	font-size: 1.1rem;
+	margin-bottom: 0rem !important;
+}
+
+.summary-single small {
+	font-weight: 700;
+	color: var(--text-gray);
+}
+
+.bday-flex {
+	display: flex;
+	align-items: center;
+	margin-bottom: 0.3rem;
+}
+
+.bday-card {
+	padding: 1rem;
+}
+
+.bday-img {
+	height: 60px;
+	width: 60px;
+	border-radius: 50%;
+	border: 3px solid #efefef;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-image: url(img/3.jpg);
+	margin-right: 0.7rem;	
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-center button {
+	background: var(--main-color);
+	color: #fff;
+	border: 1px solid var(--main-color);
+	border-radius: 4px;
+	padding: 0.4rem 1rem ;
 }
